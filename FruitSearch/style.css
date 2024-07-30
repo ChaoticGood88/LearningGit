@@ -1,0 +1,75 @@
+/* Reset box-sizing for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Body styling with gradient background */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #ff0000, #ff7c01); 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Input field styling */
+input {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid #00ff40;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Search container styling */
+.search-container {
+  width: 100%;
+  max-width: 300px;
+  position: relative; /* To position the suggestions dropdown */
+}
+
+/* Suggestions list styling */
+.search-container .suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #00ff40; 
+  border-radius: 0 0 8px 8px;
+  border-top: none; 
+  background-color: #fff;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000; /* Ensures dropdown is above other elements */
+}
+
+/* Styling for the unordered list */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/* List item styling */
+ul li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Hover state for list items */
+ul li:hover, ul li.highlight {
+  background-color: #00ff40; 
+  color: #000000; 
+}
