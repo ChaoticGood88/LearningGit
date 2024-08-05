@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title and Rating App</title>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+  <style>
+    .sort-buttons {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="text-center">Title and Rating App</h1>
+  <form id="rating-form" class="mb-3">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" class="form-control" required minlength="2">
+      <div class="invalid-feedback">Title must be at least 2 characters long.</div>
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input type="number" id="rating" class="form-control" min="0" max="10" required>
+      <div class="invalid-feedback">Rating must be between 0 and 10.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+
+  <div class="sort-buttons">
+    <button id="sort-title-asc" class="btn btn-secondary btn-sm">Sort by Title (A-Z)</button>
+    <button id="sort-title-desc" class="btn btn-secondary btn-sm">Sort by Title (Z-A)</button>
+    <button id="sort-rating-asc" class="btn btn-secondary btn-sm">Sort by Rating (Low to High)</button>
+    <button id="sort-rating-desc" class="btn btn-secondary btn-sm">Sort by Rating (High to Low)</button>
+  </div>
+
+  <div id="ratings-list" class="mt-3">
+    <!-- Submitted titles and ratings will appear here -->
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#rating-form").on("submit", function(event) {
+      event.preventDefault();
+
+      // Validation for title and rating inputs
+      const title = $("#title").val();
+      const rating = $("#rating").val();
+      
+      if (title.length < 2) {
+        $("#title").addClass("is-invalid");
+        return;
+      } else {
+        $("#title").removeClass("is-invalid");
+      }
+
+      if (rating < 0 || rating > 10) {
+        $("#rating").addClass("is-invalid");
+        return;
+      } else {
+        $("#rating").removeClass("is-invalid");
+      }
+
+      // Append the title and rating to the DOM
+      $("#ratings-list").append(`
+        <div class="rating-entry mb-2">
+          <p><strong>Title:</strong> <span class="title">${title}</span> <strong>Rating:</strong> <span class="rating">${rating}</span></p>
+          <button class="btn btn-danger btn-sm remove-btn">Remove</button>
+        </div>
+      `);
+
+      // Clear the form inputs
+      $("#title").val("");
+      $("#rating").val("");
+    });
+
+    // Remove the title and rating entry when the remove button is clicked
+    $("#ratings-list").on("click", ".remove-btn", function() {
+      $(this).closest(".rating-entry").remove();
+    });
+
+    // Sorting functions
+    function sortEntries(comparator) {
+      const entries = $(".rating-entry").toArray();
+      entries.sort(comparator);
+      $("#ratings-list").html(entries);
+    }
+
+    $("#sort-title-asc").on("click", function() {
+      sortEntries((a, b) => {
+        const titleA = $(a).find(".title").text().toLowerCase();
+        const titleB = $(b).find(".title").text().toLowerCase();
+        return titleA.localeCompare(titleB);
+      });
+    });
+
+    $("#sort-title-desc").on("click", function() {
+      sortEntries((a, b) => {
+        const titleA = $(a).find(".title").text().toLowerCase();
+        const titleB = $(b).find(".title").text().toLowerCase();
+        return titleB.localeCompare(titleA);
+      });
+    });
+
+    $("#sort-rating-asc").on("click", function() {
+      sortEntries((a, b) => {
+        const ratingA = parseFloat($(a).find(".rating").text());
+        const ratingB = parseFloat($(b).find(".rating").text());
+        return ratingA - ratingB;
+      });
+    });
+
+    $("#sort-rating-desc").on("click", function() {
+      sortEntries((a, b) => {
+        const ratingA = parseFloat($(a).find(".rating").text());
+        const ratingB = parseFloat($(b).find(".rating").text());
+        return ratingB - ratingA;
+      });
+    });
+  });
+</script>
+</body>
+</html>
