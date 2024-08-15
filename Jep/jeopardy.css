@@ -1,0 +1,80 @@
+/* General Body Styles */
+body {
+  font-family: 'Copse', serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Jeopardy Table Styles */
+#jeopardy {
+  border-collapse: collapse;
+  width: 80%; /* Adjust the width as needed */
+  table-layout: fixed; /* Ensures that table width is fixed */
+  margin: 20px 0; /* Adds margin above and below the table */
+}
+
+/* Header Styles */
+#jeopardy th {
+  border: 1px solid black;
+  background-color: #f4f4f4;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Cell Styles */
+#jeopardy td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 20px; /* Larger padding for bigger cells */
+  font-size: 1.2em;
+  min-height: 100px; /* Ensures cells are large enough */
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Hover Effect for Cells */
+#jeopardy td:hover {
+  background-color: #e0e0e0; /* Light grey background on hover */
+}
+
+/* Loading Spinner Styles */
+#loading {
+  display: none;
+  margin: 20px;
+  font-size: 1.5em;
+}
+
+/* Start/Restart Button Styles */
+#start {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/* Hide elements during loading */
+#jeopardy.hide {
+  display: none;
+}
+
+/* Additional Styling */
+.clue-cell {
+  min-height: 80px; /* Ensures cells are large enough for content */
+}
+
+/* Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  #jeopardy {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  #jeopardy th, #jeopardy td {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
