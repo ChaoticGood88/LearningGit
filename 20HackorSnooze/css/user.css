@@ -1,0 +1,39 @@
+/* Login and Signup Forms */
+.account-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff; /* Background color for forms */
+  border-radius: 5px; /* Rounded corners for a softer look */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.account-form button {
+  width: 100%; /* Full width for buttons */
+  margin-top: 10px; /* Margin at the top */
+  padding: 10px; /* Increased padding for better click area */
+  border: none;
+  border-radius: 5px; /* Consistent border radius */
+  background-color: #ff6600; /* Background color matching the nav */
+  color: white; /* White text color */
+  font-size: 0.85rem; /* Adjusted font size */
+  cursor: pointer; /* Pointer cursor for clickability */
+  transition: background-color 0.2s ease; /* Smooth transition */
+}
+
+.account-form button:hover {
+  background-color: #e55d00; /* Darker shade on hover */
+}
+
+#signup-form button {
+  width: 100%; /* Ensures consistency with login button width */
+}
+
+/* Container for Forms */
+.account-forms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align forms */
+  padding: 20px; /* Padding around container */
+}

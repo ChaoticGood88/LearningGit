@@ -1,0 +1,124 @@
+/* General Typography */
+body {
+  font-family: Arimo, sans-serif;
+  margin: 8px 7.5vw;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Site Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Adjusted for better alignment */
+  background-color: #f6f6ef;
+  padding: 10px; /* Added padding for better spacing */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 18px 0;
+}
+
+form > * {
+  margin: 10px 0;
+}
+
+form label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-block;
+  width: 4rem; /* Adjusted for better alignment */
+  text-align: right;
+  margin-right: 10px; /* Adjusted spacing */
+}
+
+form input {
+  font-size: 0.8rem;
+  border: 1px solid #ccc; /* Added border for visibility */
+  border-radius: 4px; /* Slightly larger radius for better aesthetics */
+  padding: 10px; /* Adjusted padding */
+  width: 100%; /* Full width for responsiveness */
+  max-width: 300px; /* Max width to prevent stretching */
+  box-shadow: 0 0 3px 1px lightgray;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #666; /* Improved focus border */
+  box-shadow: 0 0 4px 1px darkgray;
+}
+
+form > button {
+  width: 100%; /* Full width for better button alignment */
+  max-width: 150px; /* Max width to maintain button size */
+  margin: 10px auto; /* Centered and spaced */
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 0.85rem;
+  background-color: lightslategray;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+form > button:hover {
+  background-color: dimgray;
+}
+
+form > hr {
+  margin: 10px 0; /* Spacing for horizontal rule */
+  border: 1px solid lightgray;
+}
+
+.login-input label {
+  width: auto; /* Adjusted width for better responsiveness */
+}
+
+/* Responsive Queries */
+@media screen and (max-width: 576px) {
+  body {
+    margin: 0;
+  }
+
+  form input,
+  form > button {
+    width: 100%; /* Full width on small screens */
+  }
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    max-width: 900px;
+    margin: 8px auto;
+  }
+}

@@ -1,0 +1,67 @@
+/* Lists of Stories */
+.stories-list {
+  margin: 20px 10px; /* Increased margin for better spacing */
+  padding: 0; /* Remove default padding */
+  list-style-type: none; /* Remove bullet points */
+}
+
+.stories-list > li {
+  color: gray;
+  font-size: 0.9rem; /* Slightly increased font size for readability */
+  margin: 15px 0; /* Increased margin for better separation */
+  position: relative; /* For positioning the star icon */
+  padding: 10px; /* Added padding for spacing within each item */
+  border-bottom: 1px solid #eee; /* Light border for item separation */
+}
+
+/* Loading Message */
+#stories-loading-msg {
+  font-weight: bold;
+  font-size: 1.5rem; /* Adjusted size for visibility */
+  margin: 20px auto; /* Centered and spaced */
+  text-align: center; /* Centered text */
+}
+
+/* Individual Stories */
+.story-link {
+  color: black;
+  font-size: 0.9rem; /* Increased font size for better readability */
+  font-weight: normal;
+  margin: 10px 0; /* Adjusted margin */
+  display: block; /* Ensures full width clickable area */
+}
+
+.story-link:hover {
+  text-decoration: underline; /* Better visual feedback on hover */
+}
+
+/* Story Details */
+.story-author {
+  color: green;
+  margin-left: 2em;
+  font-style: italic; /* Italicized for differentiation */
+}
+
+.story-user {
+  display: block;
+  font-size: 0.8rem; /* Slightly smaller font size */
+  color:orange; /* Lighter color for less emphasis */
+}
+
+/* Favorite Star Icon */
+.fas.fa-star, .far.fa-star {
+  color: gold; /* Consistent color for the star icon */
+  font-size: 1.2rem; /* Slightly larger size for better visibility */
+  cursor: pointer; /* Indicate that the icon is clickable */
+  transition: color 0.2s ease-in-out; /* Smooth transition effect */
+}
+
+/* Style for favorited story */
+.fas.fa-star {
+  color: gold;
+}
+
+/* Style for non-favorited story */
+.far.fa-star {
+  color: gray;
+}
