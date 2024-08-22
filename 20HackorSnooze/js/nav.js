@@ -44,6 +44,7 @@ $body.on("click", "#nav-favorites", navFavoritesClick);
 /** When a user first logs in, update the navbar to reflect that. */
 function updateNavOnLogin() {
   console.debug("updateNavOnLogin");
+  hidePageComponents();
   $(".main-nav-links").show();
   $navLogin.hide();
   $navLogOut.show();
@@ -55,6 +56,7 @@ function updateNavOnLogin() {
 function updateNavOnLogout() {
   console.debug("updateNavOnLogout");
   $(".main-nav-links").hide();
+  hidePageComponents();
   $navLogin.show();
   $navLogOut.hide();
   $navUserProfile.hide();
